@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+	<meta charset="UTF-8">
+	<title>New Haven</title>
+
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="jquery.knob.min.js"></script>
+
+	<script>
+
+	$(document).ready(function() {
+		$('.dial').knob({
+			'release': function(v) {
+				$.ajax({
+				  url: "http://192.168.1.250/controller.php?c=speed&v=" + v
+				});
+			}
+		});
+
+		$('.btn[data-command=direction]').click(function() {
+			var direction = $(this).data('value');
+			$.ajax({
+			  url: "http://192.168.1.250/controller.php?c=direction&v=" + direction
+			});	
+		});
+	});
+
+	</script>
+</head>
+<body>
+	<div class="container text-center">
+
+		<div class="col-xs-12"></div>
+			<input type="text" value="75" class="dial" data-min="0" data-max="500">
+		</div>
+
+		<div class="col-xs-12 text-center">
+			<div class="btn-group" role="group">
+			  <button type="button" class="btn btn-danger" data-command="direction" data-value="reverse">Reverse</button>
+			  <button type="button" class="btn btn-info" data-command="direction" data-value="neutral">Neutral</button>
+			  <button type="button" class="btn btn-success" data-command="direction" data-value="forward">Forward</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

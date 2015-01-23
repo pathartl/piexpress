@@ -1,0 +1,19 @@
+{
+  "author": "Pat Hartl <pat@pathartl.me> (http://pathartl.me)",
+  "name": "piexpress",
+  "description": "An app to control a model train with a Raspberry Pi",
+  "version": "1.0.0",
+  "homepage": "http://github.com/pathartl/piexpress",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pathartl/piexpress.git"
+  },
+  "dependencies": {
+    "pi-gpio": "0.0.6"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
