@@ -4,9 +4,9 @@ var gpio = require('pi-gpio');
 
 var train = {
 	pins: {
-		fwd: 0,
-		rev: 2,
-		spd: 1
+		fwd: 11,
+		rev: 13,
+		spd: 12
 	}
 }
 
